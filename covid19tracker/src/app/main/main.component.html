@@ -1,0 +1,25 @@
+
+<div id="covidFirstCard" class="card" style="width: 18rem; margin: 0 auto;">
+    <img src="../../assets/img/covid.png" class="card-img-top" alt="..." >
+    <div class="card-body">
+      <h5 class="card-title">Incidencia de COVID-19</h5>
+      <p class="card-text">Elige un país de la lista para analizar sus casos.</p>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Elige un País</option>
+        
+      </select>
+      <br>
+      <a href="#" class="btn btn-success" style="margin-left: 30%;" (click)="letsFind()" >Buscar</a>
+    </div>
+    <div id="covidCases" class="card" style=" margin: 0 auto;">
+  
+      <div class="card-body">
+        <h2 id="confirmedCases"></h2>
+        <br>
+        <h2 id="activeCases"></h2>
+        <br>
+        <h2 id="deathCases"></h2>
+      </div>
+    </div>
+</div>
+

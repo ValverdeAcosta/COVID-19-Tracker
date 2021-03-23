@@ -1,0 +1,13 @@
+#confirmedCases {
+    color: goldenrod;
+    font-size: medium;
+}
+#activeCases {
+    color: rgb(47, 172, 16);
+    font-size: medium;
+}
+#deathCases {
+    color: rgb(207, 41, 41);
+    font-size: medium;
+}
+
