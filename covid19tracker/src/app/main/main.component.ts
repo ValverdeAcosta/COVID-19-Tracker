@@ -2,7 +2,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import $, { each } from "jquery";
 import * as moment from 'moment';
-
+import { faExclamationTriangle, faSkull, faVirus  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-main',
@@ -27,11 +27,12 @@ export class MainComponent implements OnInit {
     $('#covidCases #deathCases').empty();
 
     $.get('https://api.covid19api.com/live/country/'+country+'/status/confirmed/date/'+fecha, function(data){
+      
       $.each(data, function(index, value){
         
-        $('#covidCases #confirmedCases').append("Confirmados "+value.Province+" [ "+value.Confirmed+"]<br>");
-        $('#covidCases #activeCases').append("Activos "+value.Province+" ["+value.Active+"]<br>");
-        $('#covidCases #deathCases').append("Muertos "+value.Province+" ["+value.Deaths+"]<br>");
+        $('#covidCases #confirmedCases').append("<i class='fas fa-exclamation-triangle'></i> "+value.Province+" [ "+value.Confirmed+"]<br>");
+        $('#covidCases #activeCases').append("<i class='fas fa-virus'></i> "+value.Province+" ["+value.Active+"]<br>");
+        $('#covidCases #deathCases').append("<i class='fas fa-skull'></i> "+value.Province+" ["+value.Deaths+"]<br>");
         
 
       });
