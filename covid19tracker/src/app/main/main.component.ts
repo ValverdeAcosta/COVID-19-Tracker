@@ -27,7 +27,12 @@ export class MainComponent implements OnInit {
     $('#covidCases #deathCases').empty();
 
     $.get('https://api.covid19api.com/live/country/'+country+'/status/confirmed/date/'+fecha, function(data){
-      
+      $('#covidCases #confirmedCases').append(
+        "<div style='color:black; font-style: italic;'>Confirmados: <i style='color:goldenrod' class='fas fa-exclamation-triangle'></i><br>"+ 
+        "Activos: <i style='color:green' class='fas fa-virus'></i><br>"+ 
+        "Muertos: <i style='color:red' class='fas fa-skull'></i>" 
+        +"</div><br>"
+      );
       $.each(data, function(index, value){
         
         $('#covidCases #confirmedCases').append("<i class='fas fa-exclamation-triangle'></i> "+value.Province+" [ "+value.Confirmed+"]<br>");
